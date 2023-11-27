@@ -1,0 +1,43 @@
+// Define an array of team members
+const teamMembers = [
+  {
+    name: "John Doe",
+    role: "CEO",
+    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  },
+  {
+    name: "Jane Smith",
+    role: "CTO",
+    bio: "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.",
+  },
+  {
+    name: "Alice Johnson",
+    role: "Designer",
+    bio: "Fusce bibendum lectus eu leo bibendum, in posuere justo laoreet.",
+  },
+  // Add more team members as needed
+];
+
+// Function to display team members
+function displayTeamMembers() {
+  const aboutSection = document.getElementById("about-section");
+
+  // Create a div element for each team member
+  teamMembers.forEach((member, index) => {
+    const memberDiv = document.createElement("div");
+    memberDiv.classList.add("team-member");
+
+    // Create HTML content for the team member
+    memberDiv.innerHTML = `
+      <h3>${member.name}</h3>
+      <p>${member.role}</p>
+      <p>${member.bio}</p>
+    `;
+
+    // Append the member div to the about section
+    aboutSection.appendChild(memberDiv);
+  });
+}
+
+// Call the displayTeamMembers function when the page is loaded
+window.addEventListener("load", displayTeamMembers);
